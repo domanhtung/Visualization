@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,6 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: "Roboto", sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -30,4 +32,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+.swiper-hero-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 10px;
+  background: #fcc457;
+  z-index: 1;
 }
