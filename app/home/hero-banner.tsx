@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCreative } from "swiper/modules";
-import { heroBannerContent } from "../constants/home";
+import { bannerNavigation, heroBannerContent } from "../constants/home";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import clsx from "clsx";
@@ -100,7 +100,13 @@ const HeroBanner = () => {
                       return (
                         <div
                           key={index}
-                          className={clsx("text-white text-[18px] uppercase")}
+                          className={clsx(
+                            type === value.type ? "" : "opacity-50",
+                            "text-white text-[18px] uppercase cursor-pointer hover:opacity-100"
+                          )}
+                          onClick={() =>
+                            mySwiperRef?.current?.swiper?.slideTo(index)
+                          }
                         >
                           {type}
                         </div>
@@ -114,7 +120,48 @@ const HeroBanner = () => {
         </Swiper>
         <div ref={progressRef} className="swiper-hero-progress" />
       </div>
-      <div className="h-[50px]"></div>
+      <div className="grid grid-cols-4">
+        {bannerNavigation?.map((value, index) => {
+          return (
+            <div key={index} className="relative group">
+              <Image
+                src={value?.img}
+                className="relative w-full h-auto object-cover z-0"
+                width={480}
+                height={500}
+                priority
+                alt="img"
+              />
+              <div className="absolute w-full h-full top-0 left-0 bg-black opacity-35 group-hover:opacity-50 z-[1] duration-300" />
+              <div className="absolute w-full bottom-0 left-0 p-10 z-[2]">
+                <Image
+                  src={value?.icon}
+                  width={26}
+                  height={29}
+                  priority
+                  alt="icon"
+                />
+                <div
+                  className="mt-3 text-[20px] leading-[22px] font-medium"
+                  dangerouslySetInnerHTML={{ __html: value?.title }}
+                />
+                <div className="flex w-fit mt-5 gap-2 items-center cursor-pointer hover:gap-3 duration-150">
+                  <span className="text-[12px] text-[#FBBE3F] uppercase">
+                    read more
+                  </span>
+                  <Image
+                    src={"/images/icons/arrow_readmore.svg"}
+                    width={10}
+                    height={12}
+                    priority
+                    alt="arrow"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
