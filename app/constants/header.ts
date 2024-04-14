@@ -1,7 +1,7 @@
 export const pathnameObj = {
   home: "home",
   project: "project",
-  projectDetail: "project-detail",
+  service: "service",
   about: "about",
   blog: "blog",
 };
@@ -14,13 +14,13 @@ export const navbarList = [
   },
   {
     key: pathnameObj.project,
-    name: "Projects",
-    url: `/${pathnameObj.project}`,
+    name: "Services",
+    url: `/${pathnameObj.service}`,
   },
   {
-    key: pathnameObj.projectDetail,
-    name: "Projects Details",
-    url: `/${pathnameObj.projectDetail}`,
+    key: pathnameObj.project,
+    name: "Projects",
+    url: `/${pathnameObj.project}`,
   },
   {
     key: pathnameObj.about,

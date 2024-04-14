@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,7 +30,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+.font-neuton {
+  font-family: "Neuton", serif;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -136,11 +139,51 @@ body {
   color: #ffffff;
 }
 .btn-style3::before {
-  background: #2A2F35;
+  background: #2a2f35;
 }
 .btn-style3:hover {
   color: #2a2f35;
 }
 .btn-style3::after {
   background: #ffffff;
+}
+.project-data {
+  height: 260px;
+  background-image: url("/images/project_data.png");
+  background-color: #1c1e23;
+}
+.comment-bg {
+  background-image: url("/images/comment_bg.jpg");
+  background-position: center center;
+}
+.client-preview-swiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  border: 3px solid #d1cfcf;
+  background-color: #d1cfcf;
+  opacity: 1;
+}
+.client-preview-swiper .swiper-pagination-bullet-active {
+  border: 3px solid #fbbe3f;
+  background-color: #ffffff;
+}
+.feature-portfolio-bg {
+  background-image: url("/images/project_data.png");
+  background-color: #1c1e23;
+}
+.wpo-site-footer {
+  background: url(/images/footer_bg.jpg) center / cover no-repeat;
+  position: relative;
+  font-size: 15px;
+  overflow: hidden;
+  z-index: 1;
+}
+.project-bg {
+  background-image: url("/images/footer_bg.jpg");
+  background-color: #000000;
+}
+.project-grow-bg {
+  background-image: url("/images/project_grow.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

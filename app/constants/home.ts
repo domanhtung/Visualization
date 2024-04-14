@@ -1,3 +1,6 @@
+import { pathnameObj } from "./header";
+import { projectKey } from "./project";
+
 export const heroBannerContent = [
   {
     img: "/images/hero_1.jpg",
@@ -111,5 +114,117 @@ export const homeStoryContents = [
     content:
       "Simply put, we believe augmented reality is going to change the way we use technology forever. We’re already seeing things that will transform the way you work, play, connect and learn.",
     url: "",
+  },
+];
+
+export const projectData = [
+  {
+    icon: "/images/icons/data_1.svg",
+    title: "PROJECTS",
+    data: 101,
+  },
+  {
+    icon: "/images/icons/data_2.svg",
+    title: "HAPPY CLIENTS",
+    data: 187,
+  },
+  {
+    icon: "/images/icons/data_3.svg",
+    title: "QUALIFIED STUFF",
+    data: 154,
+  },
+  {
+    icon: "/images/icons/data_4.svg",
+    title: "DESIGNS",
+    data: 513,
+  },
+];
+export const serviceData = [
+  {
+    img: "/images/services/game.jpg",
+    key: "game",
+    keyName: "game",
+    projectKey: projectKey.metaverse,
+    project: "METACITY",
+    location: "Metaverse",
+    url: `/${pathnameObj?.project}/${projectKey?.metaverse}`,
+  },
+  {
+    img: "/images/services/design.jpg",
+    key: "design",
+    keyName: "Interior design",
+    projectKey: projectKey.interiorDesign,
+    project: "META OFFICE",
+    location: "Hanoi",
+    url: `/${pathnameObj?.project}/${projectKey?.interiorDesign}`,
+  },
+  {
+    img: "/images/services/architecture.jpg",
+    key: "architecture",
+    keyName: "architecture design & walkthrough",
+    projectKey: projectKey.architectureDesign,
+    project: "SUNSHIRE",
+    location: "Nha Trang",
+    isBigger: true,
+    url: `/${pathnameObj?.project}/${projectKey?.architectureDesign}`,
+  },
+  {
+    img: "/images/services/vr360.jpg",
+    key: "vr360",
+    keyName: "VR360 Visualization",
+    projectKey: projectKey.vr360,
+    project: "SUNSHIRE",
+    location: "Nha Trang",
+    url: `/${pathnameObj?.project}/${projectKey?.vr360}`,
+  },
+  {
+    img: "/images/services/3dvr.jpg",
+    key: "3dvr",
+    keyName: "3D VR SOLUTION",
+    projectKey: projectKey.threeDVR,
+    project: "VIRTUAL HOME",
+    location: "Ho Chi Minh",
+    url: `/${pathnameObj?.project}/${projectKey?.threeDVR}`,
+  },
+  {
+    img: "/images/services/augmented.jpg",
+    key: "augmented",
+    keyName: "augmented reality",
+    projectKey: projectKey.augmentedReality,
+    project: "3D PRODUCT VISUALIZATION",
+    location: "",
+    url: `/${pathnameObj?.project}/${projectKey?.augmentedReality}`,
+  },
+  {
+    img: "/images/services/museum.jpg",
+    key: "museum",
+    keyName: "museum interior",
+    projectKey: projectKey.museumInterior,
+    project: "CULTURAL HOUSE",
+    location: "Binh Thuan",
+    url: `/${pathnameObj?.project}/${projectKey?.museumInterior}`,
+  },
+];
+export const clientReview = [
+  {
+    comment:
+      "Wonderful design! Working with the team was easy because they were always on time and could clearly explain what was needed. The Archibuild team was very helpful and quickly took care of any small changes we requested once the product was released. Thank you; I'm really happy with how everything turned out.",
+    img: "/images/client_1.jpg",
+    name: "Georg Brown",
+    position: "Seo Company",
+  },
+  {
+    comment:
+      "Working with Archibuild was a breeze from beginning to end. Their team was attentive, accommodating, and prepared to go above and above to ensure our pleasure. The 3D models they generated enabled us to envisage our concept in ways we never imagined possible.",
+    img: "/images/client_2.jpg",
+    name: "Adriana Svendsen",
+    position: "Creative Manager",
+  },
+  {
+    comment:
+      "Archibuild's work quality left us very delighted. Their visualization capabilities enabled us to present our design concepts with clarity and precision. Their 3D graphics stand out due to their meticulous attention to detail.",
+    img: "/images/client_3.jpg",
+    name: "Amalia Edinson",
+    position: "Founder of CCP",
   },
 ];
