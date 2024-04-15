@@ -6,11 +6,13 @@ interface Props {
 
 const ProjectView = ({ data }: Props) => {
   return (
-    <div className="py-20 px-5">
+    <div className="py-20 px-5 overflow-hidden">
       <div className="grid md:grid-cols-2 h-fit gap-5">
         <div className="md:order-2 grid grid-cols-2 gap-5">
           <Image
             className="col-span-2"
+            data-aos="zoom-in"
+            data-aos-once="true"
             src={data?.bigImg}
             width={915}
             height={552}
@@ -21,6 +23,8 @@ const ProjectView = ({ data }: Props) => {
             {data?.imgCol1?.map((img: string) => {
               return (
                 <Image
+                  data-aos="zoom-in"
+                  data-aos-once="true"
                   key={img}
                   src={img}
                   className="w-ful h-auto"
@@ -36,6 +40,8 @@ const ProjectView = ({ data }: Props) => {
             {data?.imgCol2?.map((img: string) => {
               return (
                 <Image
+                  data-aos="zoom-in"
+                  data-aos-once="true"
                   key={img}
                   src={img}
                   className="w-ful h-auto"
@@ -53,6 +59,8 @@ const ProjectView = ({ data }: Props) => {
             {data?.imgCol3?.map((img: string) => {
               return (
                 <Image
+                  data-aos="zoom-in"
+                  data-aos-once="true"
                   key={img}
                   src={img}
                   className="w-ful h-auto"
@@ -68,6 +76,8 @@ const ProjectView = ({ data }: Props) => {
             {data?.imgCol4?.map((img: string) => {
               return (
                 <Image
+                  data-aos="zoom-in"
+                  data-aos-once="true"
                   key={img}
                   src={img}
                   className="w-ful h-auto"

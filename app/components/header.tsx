@@ -3,6 +3,7 @@ import Image from "next/image";
 import { navbarList } from "../constants/header";
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+import Link from "next/link";
 
 const Header = () => {
   const headerRef = useRef<any>();
@@ -43,14 +44,16 @@ const Header = () => {
         ref={headerRef}
         className="hidden header-up fixed grid-cols-4 w-full top-0 left-0 py-3 2xl:py-5 px-5 lg:px-20 2xl:px-[150px] z-50"
       >
-        <Image
-          src={"/images/logo.png"}
-          className="w-[140px] h-[34px] 2xl:w-[180px] 2xl:h-[40px] object-contain"
-          width={180}
-          height={40}
-          priority
-          alt="logo"
-        />
+        <Link href={"https://archibuild.ai"} target="_blank">
+          <Image
+            src={"/images/logo.png"}
+            className="w-[140px] h-[34px] 2xl:w-[180px] 2xl:h-[40px] object-contain"
+            width={180}
+            height={40}
+            priority
+            alt="logo"
+          />
+        </Link>
         <div className="flex col-span-2 gap-5 items-center justify-end">
           {navbarList?.map((nav, index) => {
             return (

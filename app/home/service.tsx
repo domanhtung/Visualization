@@ -10,6 +10,7 @@ const ServiceHome = () => {
         return (
           <div
             key={service?.key}
+            data-aos="zoom-in"
             className={clsx(
               "relative overflow-hidden group h-[300px] sm:h-auto",
               service?.isBigger && "sm:col-span-2"

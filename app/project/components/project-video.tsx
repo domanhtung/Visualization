@@ -9,13 +9,14 @@ const ProjectVideoShow = ({ data }: Props) => {
   if (data?.video2 || data?.previewImg2) {
     return (
       <div className="py-10 2xl:py-20">
-        <div className="container grid lg:grid-cols-2 mx-auto px-5 gap-5">
+        <div className="container grid lg:grid-cols-2 mx-auto px-5 gap-5 overflow-hidden">
           <div className="lg:col-span-2 p-8 bg-white text-[20px] 2xl:text-[25px] text-[#383C50] opacity-60 font-neuton">
             {data?.content}
           </div>
           <div>
             {data?.video ? (
               <iframe
+                data-aos="fade-right"
                 className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
                 width="420"
                 height="315"
@@ -23,6 +24,7 @@ const ProjectVideoShow = ({ data }: Props) => {
               ></iframe>
             ) : (
               <Image
+                data-aos="fade-right"
                 src={data?.previewImg}
                 className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
                 width={755}
@@ -38,6 +40,7 @@ const ProjectVideoShow = ({ data }: Props) => {
           <div>
             {data?.video2 ? (
               <iframe
+                data-aos="fade-left"
                 className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
                 width="420"
                 height="315"
@@ -45,6 +48,7 @@ const ProjectVideoShow = ({ data }: Props) => {
               ></iframe>
             ) : (
               <Image
+                data-aos="fade-left"
                 src={data?.previewImg2}
                 className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
                 width={755}
@@ -67,10 +71,11 @@ const ProjectVideoShow = ({ data }: Props) => {
 
   return (
     <div className="py-10 2xl:py-20">
-      <div className="container grid lg:grid-cols-2 mx-auto px-5 gap-5">
+      <div className="container grid lg:grid-cols-2 mx-auto px-5 gap-5 overflow-hidden">
         <div>
           {data?.video ? (
             <iframe
+              data-aos="fade-right"
               className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
               width="420"
               height="315"
@@ -78,6 +83,7 @@ const ProjectVideoShow = ({ data }: Props) => {
             ></iframe>
           ) : (
             <Image
+              data-aos="fade-right"
               src={data?.previewImg}
               className="w-full h-full min-h-[420px] 2xl:min-h-[474px]"
               width={860}
@@ -90,7 +96,10 @@ const ProjectVideoShow = ({ data }: Props) => {
         <div className="block lg:hidden text-[14px] text-[#383C50] text-center uppercase font-semibold">
           {data?.previewTitle}
         </div>
-        <div className="p-8 bg-white text-[18px] lg:text-[20px] 2xl:text-[25px] text-[#383C50] opacity-60 font-neuton">
+        <div
+          data-aos="fade-left"
+          className="p-8 bg-white text-[18px] lg:text-[20px] 2xl:text-[25px] text-[#383C50] opacity-60 font-neuton"
+        >
           {data?.content}
         </div>
         <div className="hidden lg:block text-[#383C50] text-center uppercase font-semibold">

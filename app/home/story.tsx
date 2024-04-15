@@ -29,11 +29,10 @@ const StoryHome = () => {
         </div>
         <button className="btn btn-style1 mt-6">core values</button>
       </div>
-      <div>
+      <div className="relative">
         <Swiper
           slidesPerView={1}
           centeredSlides={false}
-          grabCursor={true}
           loop
           breakpoints={{
             1024: {
@@ -41,7 +40,10 @@ const StoryHome = () => {
               slidesPerGroup: 2,
             },
           }}
-          scrollbar={true}
+          navigation={{
+            nextEl: ".story-button-next",
+            prevEl: ".story-button-prev",
+          }}
           modules={[Navigation]}
           className="mySwiper"
         >
@@ -70,6 +72,26 @@ const StoryHome = () => {
             );
           })}
         </Swiper>
+        <div className="absolute story-button-prev top-1/2 left-0 -translate-y-1/2 items-center z-[1]">
+          <Image
+            src={"/images/icons/arrow_left.svg"}
+            className="w-[50px] h-[50px] cursor-pointer"
+            width={40}
+            height={24}
+            priority
+            alt="prev"
+          />
+        </div>
+        <div className="absolute story-button-prev top-1/2 right-0 -translate-y-1/2 items-center z-[1]">
+          <Image
+            src={"/images/icons/arrow_right.svg"}
+            className="w-[50px] h-[50px] cursor-pointer"
+            width={40}
+            height={40}
+            priority
+            alt="next"
+          />
+        </div>
       </div>
     </div>
   );

@@ -13,7 +13,11 @@ interface Props {
 
 const FeatureImageItem = ({ icon, title, img, color, url }: Props) => {
   return (
-    <div style={{ backgroundColor: color ?? "" }} className="relative group h-[300px] sm:h-auto">
+    <div
+      style={{ backgroundColor: color ?? "" }}
+      data-aos="zoom-in-down"
+      className="relative group h-[300px] sm:h-auto"
+    >
       {img && (
         <>
           <Image
