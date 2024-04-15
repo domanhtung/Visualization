@@ -1,9 +1,9 @@
 const FeaturePortfolio = () => {
   return (
-    <div className="feature-portfolio-bg relative row-span-2">
+    <div className="feature-portfolio-bg relative lg:row-span-2">
       <div className="absolute flex w-full h-full top-0 left-0 items-center justify-center p-8 text-center">
         <div>
-          <div className="text-[24px] font-medium">
+          <div className="text-[20px] 2xl:text-[24px] font-medium">
             Featured Archibuild Projects
           </div>
           <p className="mt-2 text-[14px] text-[#B8B8B8]">

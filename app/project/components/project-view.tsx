@@ -7,8 +7,8 @@ interface Props {
 const ProjectView = ({ data }: Props) => {
   return (
     <div className="py-20 px-5">
-      <div className="grid grid-cols-2 h-fit gap-5">
-        <div className="order-2 grid grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 h-fit gap-5">
+        <div className="md:order-2 grid grid-cols-2 gap-5">
           <Image
             className="col-span-2"
             src={data?.bigImg}
@@ -48,7 +48,7 @@ const ProjectView = ({ data }: Props) => {
             })}
           </div>
         </div>
-        <div className="order-1 grid grid-cols-2 h-fit gap-5">
+        <div className="md:order-1 grid grid-cols-2 h-fit gap-5">
           <div className="grid h-fit gap-5">
             {data?.imgCol3?.map((img: string) => {
               return (
@@ -82,7 +82,9 @@ const ProjectView = ({ data }: Props) => {
         </div>
       </div>
       <div className="grid mt-10 font-semibold text-center uppercase">
-        <span className="text-[#383C50]">view trailer</span>
+        <span className="text-[14px] lg:text-[16px] text-[#383C50]">
+          view trailer
+        </span>
         <span className="w-[100px] h-[2px] mx-auto bg-[#383C50]" />
       </div>
     </div>

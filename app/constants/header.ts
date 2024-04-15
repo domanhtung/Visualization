@@ -24,7 +24,7 @@ export const navbarList = [
   },
   {
     key: pathnameObj.about,
-    name: "About US",
+    name: "About Us",
     url: `/${pathnameObj.about}`,
   },
   {

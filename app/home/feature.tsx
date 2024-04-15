@@ -6,7 +6,7 @@ import FeatureMap from "./components/feature-map";
 
 const FeatureHome = () => {
   return (
-    <div className="grid grid-cols-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4">
       <FeatureImageItem
         icon="/images/icons/feature_1.svg"
         title="3D VISUALIZATION"
@@ -44,7 +44,7 @@ const FeatureHome = () => {
         color="#FCC457"
         url=""
       />
-      <div className="relative col-span-2">
+      <div className="relative lg:col-span-2">
         <Image
           src={"/images/services/feature_4.jpg"}
           className="w-full h-auto"

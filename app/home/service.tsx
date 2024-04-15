@@ -5,14 +5,14 @@ import Link from "next/link";
 
 const ServiceHome = () => {
   return (
-    <div className="grid grid-cols-4">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4">
       {serviceData?.map((service) => {
         return (
           <div
             key={service?.key}
             className={clsx(
-              "relative overflow-hidden group",
-              service?.isBigger && "col-span-2"
+              "relative overflow-hidden group h-[300px] sm:h-auto",
+              service?.isBigger && "sm:col-span-2"
             )}
           >
             <Image
@@ -24,12 +24,14 @@ const ServiceHome = () => {
               alt="service"
             />
             <div className="absolute w-full h-full top-0 left-0 bg-black opacity-30 z-[1]"></div>
-            <div className="absolute top-0 left-0 p-8 z-[2]">
+            <div className="absolute top-0 left-0 p-5 2xl:p-8 z-[2]">
               <p className="text-[10px] uppercase">{service?.keyName}</p>
-              <p className="text-[20px] uppercase">{service?.project}</p>
+              <p className="text-[18px] 2xl:text-[20px] uppercase">
+                {service?.project}
+              </p>
               <p className="h-[52px] py-4 text-[13px]">{service?.location}</p>
               <Link href={service?.url}>
-                <button className="px-5 py-2 border-[3px] hover:text-black hover:bg-[#FBBE3F] border-[#FBBE3F] text-[#FBBE3F] duration-200">
+                <button className="px-5 py-2 border-[3px] text-[14px] hover:text-black hover:bg-[#FBBE3F] border-[#FBBE3F] text-[#FBBE3F] duration-200">
                   View more
                 </button>
               </Link>

@@ -13,11 +13,11 @@ interface Props {
 
 const FeatureImageItem = ({ icon, title, img, color, url }: Props) => {
   return (
-    <div style={{ backgroundColor: color ?? "" }} className="relative group">
+    <div style={{ backgroundColor: color ?? "" }} className="relative group h-[300px] sm:h-auto">
       {img && (
         <>
           <Image
-            className="w-full h-auto"
+            className="w-full h-full sm:h-auto"
             src={img}
             width={480}
             height={350}
@@ -30,7 +30,7 @@ const FeatureImageItem = ({ icon, title, img, color, url }: Props) => {
       <div className="absolute bottom-0 left-0 p-8 z-[2]">
         <Image
           src={icon}
-          className="min-w-[24px] object-contain"
+          className="w-[24px] min-w-[24px] h-[29px] object-contain"
           width={24}
           height={29}
           priority
@@ -38,7 +38,7 @@ const FeatureImageItem = ({ icon, title, img, color, url }: Props) => {
         />
         <p
           className={clsx(
-            "flex h-[40px] my-4 items-center text-[20px] leading-[22px] font-medium",
+            "flex h-[40px] my-3 2xl:my-4 items-center text-[18px] 2xl:text-[20px] leading-[22px] font-medium",
             color && "text-[#2A2F35]"
           )}
         >
@@ -47,7 +47,10 @@ const FeatureImageItem = ({ icon, title, img, color, url }: Props) => {
         <div className="flex">
           <Link
             href={url}
-            className="flex gap-2 hover:gap-3 items-center text-[12px] text-[#FBBE3F] uppercase duration-150"
+            className={clsx(
+              "flex gap-2 hover:gap-3 items-center text-[12px] uppercase duration-150",
+              color === "#FCC457" ? "text-[#ffffff]" : "text-[#FBBE3F]"
+            )}
             target={"_blank"}
           >
             read more{" "}

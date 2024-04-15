@@ -12,13 +12,20 @@ const WhatWeDo = () => {
         priority
         alt="bg"
       />
-      <div className="relative max-w-[1170px] mx-auto py-20">
-        <div className="font-semibold">HERE YOU CAN SEE AND ESTIMATE</div>
-        <div className="text-[76px] font-bold">WHAT WE DO</div>
-        <div className="grid grid-cols-3 gap-5 mt-10">
+      <div className="relative max-w-[1210px] mx-auto px-5 py-20">
+        <div className="text-[14px] 2xl:text-[16px] font-semibold">
+          HERE YOU CAN SEE AND ESTIMATE
+        </div>
+        <div className="text-[30px] md:text-[35px] lg:text-[55px] 2xl:text-[76px] font-bold">
+          WHAT WE DO
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 2xl:mt-10">
           {whatWeDo?.map((value) => {
             return (
-              <div key={value?.title} className="h-[400px] p-8 bg-white text-center">
+              <div
+                key={value?.title}
+                className="h-[400px] p-8 bg-white text-center"
+              >
                 <Image
                   src={value?.icon}
                   className="w-[60px] h-[58px] mx-auto object-contain"

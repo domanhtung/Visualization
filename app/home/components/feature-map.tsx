@@ -2,7 +2,7 @@ const FeatureMap = () => {
   const googleMapKey = process?.env?.GOOGLE_MAP_KEY || "";
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-[300px] sm:h-full">
       <iframe
         width="600"
         height="450"
