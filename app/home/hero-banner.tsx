@@ -47,7 +47,7 @@ const HeroBanner = () => {
             (mySwiperRef?.current?.swiper?.autoplay?.timeLeft / delayTime) * 100
         );
         progressRef.current.style.width =
-          percentTime >= 100 ? 100 : percentTime + "%";
+          (percentTime >= 100 ? 100 : percentTime) + "%";
 
         if (percentTime >= 100) {
           clearInterval(intervalId);
