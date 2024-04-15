@@ -82,7 +82,7 @@ const StoryHome = () => {
             alt="prev"
           />
         </div>
-        <div className="absolute story-button-prev top-1/2 right-0 -translate-y-1/2 items-center z-[1]">
+        <div className="absolute story-button-next top-1/2 right-0 -translate-y-1/2 items-center z-[1]">
           <Image
             src={"/images/icons/arrow_right.svg"}
             className="w-[50px] h-[50px] cursor-pointer"
