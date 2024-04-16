@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { homeStoryContents } from "../constants/home";
 import Image from "next/image";
+import Link from "next/link";
 
 const StoryHome = () => {
   return (
@@ -66,7 +67,9 @@ const StoryHome = () => {
                   <p className="flex h-[160px] 2xl:h-[140px] py-3 text-[14px] 2xl:text-[16px] items-center italic">
                     {value?.content}
                   </p>
-                  <button className="btn btn-style3">view more</button>
+                  <Link href={value?.url}>
+                    <button className="btn btn-style3">view more</button>
+                  </Link>
                 </div>
               </SwiperSlide>
             );

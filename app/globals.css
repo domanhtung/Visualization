@@ -23,12 +23,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #EEF1F2;
 }
 .font-neuton {
   font-family: "Neuton", serif;
