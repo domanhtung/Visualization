@@ -3,10 +3,11 @@ import FeatureImageItem from "./components/feature-img-item";
 import FeaturePortfolio from "./components/feature-portfolio";
 import FeatureContactUs from "./components/feature-contact-us";
 import FeatureMap from "./components/feature-map";
+import { pathnameObj } from "../constants/header";
 
 const FeatureHome = () => {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4">
+    <div id={pathnameObj.blog} className="grid md:grid-cols-2 lg:grid-cols-4">
       <FeatureImageItem
         icon="/images/icons/feature_1.svg"
         title="3D VISUALIZATION"

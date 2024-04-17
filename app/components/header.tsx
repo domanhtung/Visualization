@@ -4,8 +4,11 @@ import { navbarList } from "../constants/header";
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
+import { scrollToView } from "../utils";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
   const headerRef = useRef<any>();
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
@@ -57,12 +60,26 @@ const Header = () => {
         <div className="flex col-span-2 gap-5 items-center justify-end">
           {navbarList?.map((nav, index) => {
             return (
-              <div
-                key={index}
-                className="hidden lg:block uppercase text-[14px] 2xl:text-[16px] font-bold"
-              >
-                {nav.name}
-              </div>
+              <>
+                {!!nav?.key ? (
+                  <div
+                    key={index}
+                    className="hidden lg:block uppercase text-[14px] 2xl:text-[16px] font-bold cursor-pointer"
+                    onClick={() => scrollToView(nav.key, router)}
+                  >
+                    {nav.name}
+                  </div>
+                ) : (
+                  <Link href={nav?.url}>
+                    <div
+                      key={index}
+                      className="hidden lg:block uppercase text-[14px] 2xl:text-[16px] font-bold"
+                    >
+                      {nav.name}
+                    </div>
+                  </Link>
+                )}
+              </>
             );
           })}
         </div>

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { footerOurServices, socials } from "../constants/footer";
 import { navbarList } from "../constants/header";
+import { scrollToView } from "../utils";
+import { homeStoryContents } from "../constants/home";
 
 const FooterComponent = () => {
   const router = useRouter();
@@ -57,12 +59,14 @@ const FooterComponent = () => {
             </div>
             <div className="w-[80px] max-w-full h-[2px] mb-8 !bg-[#FBBE3F]" />
             <div>
-              {footerOurServices?.map((service, index) => {
+              {homeStoryContents?.map((service, index) => {
+                if (index > 4) return null;
+
                 return (
                   <div key={index} className="w-fit">
                     <Link href={service?.url}>
                       <div className="w-fit !text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer">
-                        {service?.name}
+                        {service?.title}
                       </div>
                     </Link>
                   </div>
@@ -78,34 +82,30 @@ const FooterComponent = () => {
             <div>
               {navbarList?.map((nav) => {
                 return (
-                  <div
-                    className="w-fit !text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer"
-                    key={nav?.key}
-                    // onClick={() => {
-                    //   nav.key !== pathnameObj.contact &&
-                    //     nav.key !== pathnameObj.visualization &&
-                    //     scrollToView(nav.key, router);
-                    // }}
-                  >
-                    {/* {nav.key === pathnameObj.contact ||
-                    nav.key === pathnameObj.visualization ? (
-                      <Link
-                        href={`${nav?.url}`}
-                        className="!text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer"
-                        target={
-                          nav.key === pathnameObj.visualization
-                            ? "_blank"
-                            : "_self"
-                        }
+                  <>
+                    {!!nav?.key ? (
+                      <div
+                        className="w-fit !text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer"
+                        key={nav?.key}
+                        onClick={() => scrollToView(nav.key, router)}
                       >
-                        {nav?.name}
+                        <span className="!text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer">
+                          {nav?.name}
+                        </span>
+                      </div>
+                    ) : (
+                      <Link href={nav?.url}>
+                        <div
+                          className="w-fit !text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer"
+                          key={nav?.key}
+                        >
+                          <span className="!text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer">
+                            {nav?.name}
+                          </span>
+                        </div>
                       </Link>
-                    ) : ( */}
-                    <span className="!text-white mt-3 text-[16px] 2xl:text-[18px] hover:!text-[#FBBE3F] cursor-pointer">
-                      {nav?.name}
-                    </span>
-                    {/* )} */}
-                  </div>
+                    )}
+                  </>
                 );
               })}
             </div>

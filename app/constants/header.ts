@@ -8,12 +8,11 @@ export const pathnameObj = {
 
 export const navbarList = [
   {
-    key: pathnameObj.home,
     name: "Home",
     url: "/",
   },
   {
-    key: pathnameObj.project,
+    key: pathnameObj.service,
     name: "Services",
     url: `/${pathnameObj.service}`,
   },

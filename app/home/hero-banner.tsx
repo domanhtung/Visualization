@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import AOS from "aos";
+import { pathnameObj } from "../constants/header";
 
 const HeroBanner = () => {
   const delayTime = 12000;
@@ -164,7 +165,10 @@ const HeroBanner = () => {
         )}
         <div ref={progressRef} className="swiper-hero-progress" />
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        id={pathnameObj.about}
+        className="grid sm:grid-cols-2 lg:grid-cols-4"
+      >
         {bannerNavigation?.map((value, index) => {
           return (
             <div

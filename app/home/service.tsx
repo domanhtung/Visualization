@@ -2,10 +2,14 @@ import Image from "next/image";
 import { serviceData } from "../constants/home";
 import clsx from "clsx";
 import Link from "next/link";
+import { pathnameObj } from "../constants/header";
 
 const ServiceHome = () => {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+    <div
+      id={pathnameObj.project}
+      className="grid sm:grid-cols-2 lg:grid-cols-4"
+    >
       {serviceData?.map((service) => {
         return (
           <div

@@ -6,10 +6,14 @@ import { Navigation } from "swiper/modules";
 import { homeStoryContents } from "../constants/home";
 import Image from "next/image";
 import Link from "next/link";
+import { pathnameObj } from "../constants/header";
 
 const StoryHome = () => {
   return (
-    <div className="md:grid md:grid-cols-2 bg-white items-center">
+    <div
+      id={pathnameObj.service}
+      className="md:grid md:grid-cols-2 bg-white items-center"
+    >
       <div className="w-full px-10 2xl:px-[95px] py-5">
         <div className="text-[22px] 2xl:text-[24px] font-medium text-[#2A2F35]">
           What’s Your Story?
